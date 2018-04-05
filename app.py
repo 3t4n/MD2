@@ -17,15 +17,15 @@ def crearMundo():
 def static_page(page_name):
     return render_template('%s.html' % page_name)
 
-@app.route('static/js/<path:path>')
+@app.route('/static/js/<path:path>')
 def sendjs(path):
     return send_from_directory('js', path)
 
-@app.route('static/imgs/<path:path>')
+@app.route('/static/imgs/<path:path>')
 def sendimgs(path):
     return send_from_directory('imgs', path)
 
-@app.route('static/css/<path:path>')
+@app.route('/static/css/<path:path>')
 def sendcss(path):
     return send_from_directory('css', path)
 
