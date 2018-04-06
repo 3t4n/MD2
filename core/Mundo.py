@@ -66,7 +66,7 @@ class Mundo():
                 tokensubclase = choice(self.figuras)
                 conector = choice(self.conectores)
                 tempEnunciado = tempEnunciado + self.valorNegacion(tokenNs)+ tokenPropiedad +"("+valorPropiedad+","+tokensubclase+")"+ ("" if j==subP else conector)
-                valorsubEnunciado = tokenC
+                valorsubEnunciado = tokenC 
                 for row in self.tablero:
                     for figura in row:
                         if(any(figura)):
@@ -80,7 +80,7 @@ class Mundo():
                 valorsubEnunciado = not(valorsubEnunciado) if tokenN else valorsubEnunciado
                 temp = temp + str(valorsubEnunciado) + ("" if j==subP else conector)
             ##print(temp+"\n")
-            valorEnunciado =  str(not(bool(self.algebra.parse(temp).simplify())) if tokenN else bool(self.algebra.parse(temp).simplify())) 
+            valorEnunciado =  str(not(bool(self.algebra.parse(temp).simplify())) if 'x'==tokensubclase else bool(self.algebra.parse(temp).simplify())) 
                 
                 #print(str(tokenNs)+ " "+tokenPropiedad +" "+ valorPropiedad +" " + figura[tokenPropiedad]  + " " + figura['letra'] + " " + tokensubclase + " " + str(valorsubEnunciado))
 
