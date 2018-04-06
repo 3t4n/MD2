@@ -1,0 +1,44 @@
+<div ng-controller="generarMundoController">
+
+<form>
+<p>Columnas</p>
+<input type="text" ng-model="x" placeholder="Columnas" required autofocus>
+<p>Filas</p>
+<input type="text" ng-model="y" placeholder="Filas" required autofocus>
+<p>lados</p>
+<input type="text" ng-model="lados" placeholder="Lados" required autofocus>
+<p>procentaje</p>
+<input type="text" ng-model="porcentaje" placeholder="porcentaje" required autofocus>
+<p>Numero de enunciados</p>
+<input type="text" ng-model="enunciados" placeholder="Numero de enunciados" required autofocus>
+<p>Numero de subenunciados<p>
+<input type="text" ng-model="subenunciados" placeholder="Numero de subenunciados" required autofocus>
+<button  ng-click="generarMundo()" type="submit"> Generar</button>
+</form>
+
+<table>
+<tr ng-repeat="row in res.mundo">
+    <td ng-repeat="figura in row" style="float:left" >
+        <div ng-if="vacio(figura)">
+            <svg width="75" height="75">
+ <rect width="75" height="75" style="fill:white;stroke-width:2;stroke:rgb(0,0,0)" />
+            </svg>
+        </div>
+        <div ng-if="vacio(figura)==false">
+            <svg width="75" height="75" >
+                <rect width="75" height="75" style="fill:{{figura.colorC}};stroke-width:2;stroke:rgb(0,0,0)" />
+                <polygon ng-attr-points="{{coord(figura.coord,75)}}"  style="fill:{{figura.colorF}};stroke-width:1" />
+            </svg>
+        </div>
+    </td>
+</tr>
+</table>
+
+
+<div ng-repeat="pregunta in res.preguntas">
+    <p> {{pregunta.string}}{{$index}}</p>
+<button ng-click="checar(pregunta.id,'True')" >Verdadera</button>
+<button ng-click="checar(pregunta.id,'False')" >Falsa</button>
+<p>{{correcto[pregunta.id]}}<p>
+</div>
+</div>
