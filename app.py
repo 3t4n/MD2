@@ -4,7 +4,7 @@ from core.Mundo import *
 app = Flask(__name__)
 app.config.from_object('config')
 COLORESF =["green","blue","gray","yellow","pink"]
-COLORESC = ["white","black","orange"]
+COLORESC = ["white","chocolate","orange"]
 
 @app.route('/generarMundo', methods = ['GET', 'POST'])
 def crearMundo():

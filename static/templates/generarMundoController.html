@@ -20,14 +20,15 @@
 <tr ng-repeat="row in res.mundo">
     <td ng-repeat="figura in row" style="float:left" >
         <div ng-if="vacio(figura)">
-            <svg width="75" height="75">
- <rect width="75" height="75" style="fill:white;stroke-width:2;stroke:rgb(0,0,0)" />
+            <svg width="150" height="150">
+ <rect width="150" height="150" style="fill:white;stroke-width:2;stroke:black;" />
             </svg>
         </div>
         <div ng-if="vacio(figura)==false">
-            <svg width="75" height="75" >
-                <rect width="75" height="75" style="fill:{{figura.colorC}};stroke-width:2;stroke:rgb(0,0,0)" />
-                <polygon ng-attr-points="{{coord(figura.coord,75)}}"  style="fill:{{figura.colorF}};stroke-width:1" />
+            <svg width="150" height="150" >
+                <rect width="150" height="150" style="fill:{{figura.colorC}};stroke-width:2;stroke:black;" />
+                <polygon ng-attr-points="{{coord(figura.coord,150)}}"  style="fill:{{figura.colorF}};stroke-width:1" />
+                <text fill="#ffffff" font-size="12" font-family="Verdana" x="75" y="75">{{figura.letra}}</text>
             </svg>
         </div>
     </td>
